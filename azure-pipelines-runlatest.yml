@@ -10,6 +10,10 @@ lockBehavior: runLatest
 stages:
 - stage: A
   jobs:
+  - job: Pre
+    steps:
+    - script: echo "hi!"
+
   - deployment: Job
     environment: RunLatest
     strategy:
