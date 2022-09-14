@@ -15,6 +15,7 @@ stages:
     - script: echo "hi!"
 
   - deployment: Job
+    dependsOn: Pre
     environment: RunLatest
     strategy:
      runOnce:
@@ -23,6 +24,7 @@ stages:
            - script: sleep 30
 
   - job: Job2
+    dependsOn: Job
     steps:
     - script: echo "hey!"
 
