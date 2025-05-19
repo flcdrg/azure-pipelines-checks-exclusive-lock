@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.yml": "azure-pipelines",
+  },
+    "[azure-pipelines]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
