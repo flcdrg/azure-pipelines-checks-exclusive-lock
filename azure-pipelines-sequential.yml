@@ -1,6 +1,6 @@
 # https://docs.microsoft.com/azure/devops/pipelines/process/approvals?view=azure-devops&WT.mc_id=DOP-MVP-5001655
 trigger:
-- main
+  - main
 
 pool:
   vmImage: ubuntu-latest
@@ -8,18 +8,17 @@ pool:
 lockBehavior: sequential
 
 stages:
-- stage: A
-  jobs:
-  - deployment: Job
-    environment: RunLatest
-    strategy:
-     runOnce:
-       deploy:
-         steps:
-           - script: sleep 30
+  - stage: A
+    jobs:
+      - deployment: Job
+        environment: RunLatest
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - script: sleep 30
 
-  - job: Job2
-    dependsOn: Job
-    steps:
-    - script: sleep 30
-
+      - job: Job2
+        dependsOn: Job
+        steps:
+          - script: sleep 30
